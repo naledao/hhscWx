@@ -1,0 +1,9 @@
+<van-collapse value="{{ activeNames }}" bind:change="onChange" bindtap="flag">
+  <van-collapse-item wx:for="{{content}}" wx:key="id" title="{{item.title}}" name="{{item.id}}">
+    <view wx:if="{{item.id==4}}">
+      <image src="{{item.content}}" mode="widthFix"></image>
+    </view>
+    <view wx:else="">{{item.content}}</view>
+  </van-collapse-item>
+</van-collapse>
+

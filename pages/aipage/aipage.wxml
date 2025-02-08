@@ -1,0 +1,50 @@
+<view class="ai" wx:if="{{judges}}">
+  <scroll-view class="ai-conversation" scroll-y="true" scroll-into-view="{{kl}}" style="height: {{2*top-60+'rpx'}};">
+    <view wx:for="{{message}}" wx:key="id" id="{{item.id}}">
+
+      <view class="last1">{{item.time}}</view>
+
+      <view class="robot" wx:if="{{item.role=='assistant'}}">
+        <image src="./../mine/static/tubiao.jpg" mode="aspectFill" class="robot-image"/>
+        <view class="robot-answer" bindtap="fuzhi" data-index="{{item.message}}">{{item.message}}</view>
+     </view>
+
+      <view class="user" wx:if="{{item.role=='user'}}">
+      
+        <image src="{{pic}}" mode="aspectFill" class="user-image"/>
+        <view class="user-answer" bindtap="fuzhi" data-index="{{item.message}}">{{item.message}}</view>
+      </view>
+
+    </view>
+  <view id='jk' style="height: 16rpx;width: 100%;"></view>
+  </scroll-view>
+
+
+  <view class="ai-bottom">
+    <textarea class="question"   model:value="{{question}}" bindinput="getquestion" placeholder="请输入信息" 	auto-height="{{true}}" hold-keyboard="{{true}}" fixed="{{true}}" rows="3" show-confirm-bar = "{{false}}" cursor-spacing="{{24}}" maxlength="299"></textarea>
+    <button class="send" bindtap="getwait" type="primary">发送</button>
+    <button class="send2" bindtap="resetConversation" type="default">重置会话</button>
+    <button class="send3" bindtap="getAllMessage" type="default">刷新</button>
+  </view>
+</view>
+
+
+<!-- 服务未开启页面 -->
+<view class="error" wx:if="{{!judges}}">
+  <view class="keep">
+    <image src="https://img0.baidu.com/it/u=3794237954,543581995&fm=253&fmt=auto&app=120&f=JPEG?w=306&h=500"/>
+    <text>服务已关闭</text>
+  </view>
+</view>
+
+
+<!-- dialog -->
+<van-dialog id="van-dialog" />
+
+<!-- 在页面内添加对应的节点 -->
+<van-notify id="van-notify" />
+
+
+
+
+

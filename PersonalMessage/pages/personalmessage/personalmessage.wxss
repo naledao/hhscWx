@@ -1,0 +1,31 @@
+/* PersonalMessage/pages/personalmessage/personalmessage.wxss */
+@import "../../../fonts/goodsicon/iconfont.wxss";
+.one{
+  display: flex;
+  flex-direction: row;
+  height: 160rpx;
+  width: 100%;
+  background-color: white;
+  align-items: center;
+  border-bottom: rgb(199, 195, 195);
+  border-bottom-style: double;
+}
+
+.two{
+  margin-left:auto;
+  margin-right: 30rpx;
+}
+
+.three{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 80rpx;
+  align-items: center;
+  margin-top: 60rpx;
+}
+
+
+page{
+  background-color: #f0f0f0;
+}

@@ -1,0 +1,124 @@
+<!-- 用户没有登录显示的页面 -->
+<!--pages/biodata/biodata.wxml-->
+
+<view class="biodata">
+<!-- 个人初始信息 -->
+  <view class="primary-data"  wx:if="{{user!=null}}">
+    <image src="{{user.head}}" mode="aspectFill"></image>
+    <view class="p-text">
+      <view class="p-name">{{user.name}}</view>
+      <view class="p-id">
+        <text class="id-box">hhsc{{user.warehouse}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="primary-data" hover-class="gray" wx:if="{{user==null}}" bindtap="login">
+    <image src="" mode="aspectFill" ></image>
+    <view class="p-text">
+      <view class="p-name">点击登录</view>
+    </view>
+  </view>
+
+  <!-- 提供服务 -->
+  <view class="server">
+    <view  class="func" bindtap="tobrowsehis">
+      <view hover-class="iconfont-hover" class="iconfont .icon-icon"></view>
+      <text class="tishi">浏览记录</text>
+    </view>
+    <view  class="func" bindtap="showPopup">
+      <view  hover-class="iconfont-hover" class="iconfont .icon-fabu"></view>
+      <text class="tishi">发布商品</text>
+    </view>
+    <view class="func" bindtap="tominegoods">
+      <view  hover-class="iconfont-hover" class="iconfont .icon-shangpin"></view>
+      <text class="tishi">在售商品</text>
+    </view>
+    <view class="func" bindtap="tokeyhis">
+      <view  hover-class="iconfont-hover" class="iconfont .icon-yuechi"></view>
+      <text class="tishi">密匙记录</text>
+    </view>
+  </view>
+
+<view class="else">
+  <view hover-class="hover-box" class="box">
+    <view class="iconfont .icon-icon1 box-icon box-larger"></view>
+      <view class="direc" bindtap="Toabout">
+        <text>使用说明</text>  
+        <text class="iconfont .icon-xuanzeqixiayige"></text>
+      </view>
+    </view>
+    <view hover-class="hover-box" class="box" bindtap="toemail">
+      <view class="iconfont .icon-mail box-icon"></view>
+      <view class="direc">
+        <text>绑定邮箱</text>  
+        <text class="iconfont .icon-xuanzeqixiayige"></text>
+      </view>
+    </view>
+    <view hover-class="hover-box" class="box" bindtap="togeedback">
+      <view class="iconfont .icon-wojianyi box-icon"></view>
+      <view class="direc" >
+        <text>反馈建议</text>  
+        <text class="iconfont .icon-xuanzeqixiayige"></text>
+      </view>
+    </view>
+    <view hover-class="hover-box" class="box" bindtap="Toinstructions">
+      <view  class="iconfont .icon-guanyu box-icon box-larger"></view>
+      <view class="direc">
+        <text>关于</text>  
+        <text class="iconfont .icon-xuanzeqixiayige"></text>
+      </view>
+    </view>
+
+    <view hover-class="hover-box" class="box" bindtap="TopersonalMessage">
+      <view  class="iconfont .icon-gerenxinxi box-icon box-larger"></view>
+      <view class="direc">
+        <text>修改个人信息</text>  
+        <text class="iconfont .icon-xuanzeqixiayige"></text>
+      </view>
+    </view>
+
+    <view hover-class="hover-box" class="box" bindtap="Toai">
+      <image src="static/tubiao.jpg" ></image>
+      <view class="direc">
+        <text>ChatGPT</text>  
+        <text class="iconfont .icon-xuanzeqixiayige"></text>
+      </view>
+    </view>
+
+    <view hover-class="hover-box" class="box"  bindtap="loginout">
+      <view class="iconfont .icon-tuichu box-icon box-icon1"></view>
+      <view class="direc">
+        <text>退出登录</text>  
+        <text class="iconfont .icon-xuanzeqixiayige"></text>
+      </view>
+    </view>
+    
+  </view>
+</view>
+
+
+
+
+
+
+
+<!-- 发布商品弹出层 -->
+<van-action-sheet style="padding-bottom: 100rpx;"
+  show="{{ show }}"
+  actions="{{ actions }}"
+  bind:close="onClose"
+  bind:select="onSelect"
+>
+  <view style="height: 120rpx;"></view>
+</van-action-sheet>
+
+<!-- 获取密匙弹出层 -->
+<van-popup show="{{ showkey }}" bind:close="onClosekey" round>
+  <view class="seven">
+    <van-field value="{{ sms }}" center clearable label="密匙:" placeholder="请输入密匙" border="{{ false }}" use-button-slot bind:change="onChange">
+      <van-button slot="button" size="small" type="primary" bind:click="checksms">验证</van-button>
+    </van-field>
+  </view>
+</van-popup>
+

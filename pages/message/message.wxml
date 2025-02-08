@@ -1,0 +1,10 @@
+<van-card wx:for="{{msgchannel}}" wx:key="{{index}}" bindtap="tochannel" 
+data-id="{{item.id}}" data-name="{{item.name}}"
+  title="{{item.name}}"
+  thumb="{{ item.pic }}"
+  desc="{{item.lastmsg}}"
+>
+  <view slot="footer">
+  </view>
+</van-card>
+

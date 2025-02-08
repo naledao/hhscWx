@@ -1,0 +1,187 @@
+
+<!-- 点击图片详情图 -->
+<van-popup show="{{ show }}" bind:close="onClose">
+  <image src="{{top}}"  mode="widthFix"></image>
+</van-popup>
+<!--pages/goods/goods.wxml-->
+<scroll-view scroll-into-view="{{i}}" scroll-y class="goods">
+    <!-- 图片展示界面 -->
+    <view class="main" id="begin">
+        <swiper indicator-dots="true"  autoplay="true" circular="true" class="images">
+        <swiper-item wx:for="{{images}}" wx:key="img" wx:if="{{item!=null && item!=chul &&item!=chul2}}">
+         <image src="{{item}}" mode="aspectFill" bindtap="showPopup" data-url="{{item}}"></image>
+        </swiper-item>
+      </swiper> 
+    </view>
+
+    <!-- 初始显示界面 -->
+    <view class="intro" bindtap="commentcancel" >
+      <view class="all-info">
+        <view class="a-main">
+          <view class="m-text">
+            <text class="price">{{goods.price}}￥</text>
+            <text class="mark">{{goods.area}}</text>
+            <text class="g-name"  bindtap="fuzhiname"  data-name="{{goods.name}}">{{goods.name}}</text>
+          </view>
+
+          <view class="u-info">
+            <image src="{{user.head}}" mode="aspectFill" bindtap="topersonalshop"></image>
+            <text class="u-name">{{user.name}}</text>
+            <view class="id-box">
+              <text class="u-id">hhsc{{user.warehouse}}</text>
+            </view>
+          </view>
+        </view>
+
+        <view class="a-text">
+           <view class="t-brief" bindtap="fuzhides" data-des="{{goods.description}}">
+             {{goods.description}}
+           </view>
+           <view class="t-tip">
+             <text class="tip">留言区</text>
+           </view>
+        </view>
+      </view>
+
+
+      <scroll-view class="comment-area" scroll-y="true" id="end">
+        <view class="comment" wx:for="{{comlist}}" wx:key="{{index}}">
+          <image src="{{item.pic}}" mode="aspectFill"></image>
+          <view class="c-text">
+            <view class="c-name">
+              <view class="n-info">
+                <text class="name">{{item.name}}</text>
+                <text class="id">hhsc{{item.warehouse}}</text>
+              </view>
+              <text class="time">{{item.time}}</text>
+            </view>
+            <view class="c-content" >
+              <text class="msg" bindtap="fuzhicom" data-com="{{item.msg}}">{{item.msg}}</text>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+     
+
+
+
+    <!-- 底部导航栏 -->
+    <view class="bottom-box">
+      <view class="box1">
+        <button class="one" bindtap="comment"><text class="iconfont icon-pinglun shoucang"></text></button>
+        <button class="one" bindtap="ToCollection"><text class="iconfont icon-shoucang1 shoucang"></text></button>
+        <button class="one" bindtap="topersonalshop"><text class="iconfont icon-dianpu dianpu"></text></button>
+      </view>
+      <view class="box2">
+        <button class="two" bindtap="graphonepage" wx:if="{{rate=='s'}}">抢占首页</button>
+        <button class="two" bindtap="graphonepage" wx:if="{{rate=='a'}}">抢占滚动</button>
+        <button class="two" bindtap="graphonepage" wx:if="{{rate=='b'}}">抢占轮播</button>
+        <button class="two" bindtap="graphonepage" wx:if="{{rate=='c'}}">发布商品</button>
+        <button class="two" bindtap="nowpurchase">立即求购</button>
+      </view>
+    </view>
+    <!-- 评论栏 -->
+    <view class="comment-box" style="left:{{comment_left}}">
+      <input  type="text"  bindinput="setcomment" value="{{comments}}"/>
+      <button bindtap="sendcomments">提交</button>
+    </view>
+</scroll-view>
+
+
+<!-- 用户操作区域 -->
+<!-- <van-tabbar active="{{ active }}" bind:change="onChange">
+  <van-tabbar-item icon="shop-o" bindtap="topersonalshop">店铺</van-tabbar-item>
+  <van-tabbar-item icon="star-o" bindtap="ToCollection">收藏</van-tabbar-item>
+  <button bindtap="graphonepage" wx:if="{{rate=='s'}}">抢占首页</button>
+  <button bindtap="graphonepage" wx:if="{{rate=='a'}}">抢占滚动</button>
+  <button bindtap="graphonepage" wx:if="{{rate=='b'}}">抢占轮播</button>
+  <button bindtap="graphonepage" wx:if="{{rate=='c'}}">发布商品</button>
+  <button bindtap="nowpurchase">立即求购</button>
+</van-tabbar> -->
+
+
+<!-- 可以操作 -->
+<van-popup style="z-index:999999" show="{{ start }}" bind:close="onClose2" position="bottom" round>
+  
+  
+  
+  <!-- 可以抢占首页 -->
+  <view wx:if="{{rate=='s'}}" class="s">
+    <view class="s1">当前售价: 3元24个小时，最多一次7*24个小时</view>
+    <view class="s2">
+      <van-stepper value="{{ 1 }}" bind:change="onChangeday" min="1" max="7" theme="round"/>
+    </view>
+    <view class="s3">{{day*24}}个小时---{{day*3}}人民币</view>
+    <view class="s5">注意:密匙有效时间为24个小时，超过时间后密匙失效，购买后请尽快使用</view>
+    <view class="s4">
+      <button bindtap="onClose2">取消抢占</button>
+      <button type="primary" bindtap="getpayorder">确认抢占</button>
+    </view>
+  </view>
+
+
+  <!-- 可以抢占滚动 -->
+  <view wx:if="{{rate=='a'}}" class="s">
+    <view class="s1">当前售价: 2元24个小时，最多一次7*24个小时</view>
+    <view class="s2">
+      <van-stepper value="{{ 1 }}" bind:change="onChangeday" min="1" max="7" theme="round"/>
+    </view>
+    <view class="s3">{{day*24}}个小时---{{day*2}}人民币</view>
+    <view class="s5">注意:密匙有效时间为24个小时，超过时间后密匙失效，购买后请尽快使用</view>
+    <view class="s4">
+      <button bindtap="onClose2">取消抢占</button>
+      <button type="primary" bindtap="getpayorder">确认抢占</button>
+    </view>
+  </view>
+
+
+
+    <!-- 可以抢占轮播 -->
+    <view wx:if="{{rate=='b'}}" class="s">
+    <view class="s1">当前售价: 1元24个小时，最多一次7*24个小时</view>
+    <view class="s2">
+      <van-stepper value="{{ 1 }}" bind:change="onChangeday" min="1" max="7" theme="round"/>
+    </view>
+    <view class="s3">{{day*24}}个小时---{{day*1}}人民币</view>
+    <view class="s5">注意:密匙有效时间为24个小时，超过时间后密匙失效，购买后请尽快使用</view>
+    <view class="s4">
+      <button bindtap="onClose2">取消抢占</button>
+      <button type="primary" bindtap="getpayorder">确认抢占</button>
+    </view>
+  </view>
+</van-popup>
+
+
+
+
+<!-- 支付页面 -->
+<van-popup show="{{ start1 }}" bind:close="onClose2" position="top" round  custom-style="height: 20%" wx:if="{{payid!=null}}">
+  <!-- <web-view src="https://hhsc.kangnasi.xyz:9090/payPage/pay.html?orderId={{payid}}"></web-view> -->
+  <view class="vb">请复制链接到浏览器中打开</view>
+  <view class="kll">
+    <van-button type="primary" block bindtap="fucklian">复制链接</van-button>
+  </view>
+</van-popup>
+
+
+
+<!-- 立即求购 -->
+<van-popup show="{{ purchase }}" bind:close="onClose3" position="bottom" round>
+  <view class="qiu1">
+    <text class="az">当前求购价格：{{purchaseprice}} 人民币</text>
+    <text class="wz">注意:确认求购后，就意味着在与卖家交易时同意额外再支付当前求购的价格。求购价的产生是不同买家想要同一件商品的结果</text>
+    <view class="qiu2">
+      <button bindtap="cancelgou">取消求购</button>
+      <button type="primary" bindtap="confirmqiu">确认求购</button>
+    </view>
+  </view>
+</van-popup>
+
+
+<van-dialog id="van-dialog" />
+
+
+
+
+

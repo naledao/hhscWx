@@ -1,0 +1,655 @@
+
+.one{
+  position: relative;
+  height: 600rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.two{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+
+.three{
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  width: 690rpx;
+  margin: 12rpx auto;
+  border-radius: 12rpx;
+  box-sizing: border-box;
+}
+
+.four{
+  background-color: #f0f0f0;
+  margin-top: 24rpx;
+  margin-left: 48rpx;
+  width: 80rpx;
+  text-align: center;
+  border: 6rpx solid #f0f0f0;
+}
+
+.five{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  word-break: break-all;
+  padding-right: 48rpx;
+}
+
+.six{
+  margin-top: 24rpx;
+  margin-left: 48rpx;
+  font-size: 48rpx;
+  font-weight: 800;
+}
+
+.seven{
+  color: red;
+  font-size: medium;
+}
+
+.kll{
+  margin-top: 30rpx;
+}
+
+.vb{
+  color: #a39e9e;
+  text-align: center;
+}
+
+
+
+.eight{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  word-break: break-all;
+  padding-right: 48rpx;
+  margin-top: 24rpx;
+  margin-left: 48rpx;
+}
+
+.nine{
+  padding-right: 48rpx;
+  margin-top: 24rpx;
+  margin-left: 48rpx;
+}
+
+.ten{
+  border-bottom: 6rpx solid #f0f0f0;
+}
+
+.q{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  word-break: break-all;
+  padding-right: 48rpx;
+  margin-top: 24rpx;
+  margin-left: 48rpx;
+  font-size:30rpx;
+  font-weight: 100;
+}
+
+
+.w{
+  margin-left: 12rpx;
+}
+
+.qiu1{
+  display: flex;
+  flex-direction: column;
+  margin-left: 120rpx;
+  margin-top: 30rpx;
+  flex-wrap: wrap;
+  word-break: break-all;
+  padding-right: 120rpx;
+}
+
+.az{
+  font-size: x-large;
+}
+
+.wz{
+  font-size: smaller;
+  margin-top: 12rpx;
+  color: red;
+}
+
+
+.qiu2{
+  margin-top: 60rpx;
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 30rpx;
+}
+
+.s1{
+  margin-left: 80rpx;
+  margin-top: 30rpx;
+  padding-right: 80rpx;
+}
+
+.s2{
+  margin-top: 30rpx;
+  margin-left: 300rpx;
+}
+
+.s3{
+  margin-left: 240rpx;
+  margin-top: 30rpx;
+  padding-right: 240rpx;
+}
+
+.s4{
+  display: flex;
+  flex-direction: row;
+  margin-top: 30rpx;
+}
+
+.s5{
+  margin-left: 80rpx;
+  padding-right: 80rpx;
+  color: red;
+  font-weight: bolder;
+  margin-top: 30rpx;
+}
+
+.s{
+  padding-bottom: 30rpx;
+}
+
+
+
+/* pages/goods/goods.wxss */
+/* CDN 服务仅供平台体验和调试使用，平台不承诺服务的稳定性，企业客户需下载字体包自行发布使用并做好备份。 */
+@import "../../../fonts/goodsicon/iconfont.wxss";
+@import "../../../utils/all.wxss";
+
+
+
+.goods{
+    height: 100vh;
+    position: relative;
+    transition: all .5s ease;
+}
+.goods .main{
+    position: fixed;
+    height: 65vh;
+    width: 100%;
+    top:0;
+}
+
+.goods .main .return{
+    position: absolute;
+    top:0rpx;
+    left: 0rpx;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+}
+.goods .main .return button{
+   width: 100%;
+}
+
+
+.goods .main .return text{
+    font-size: 40rpx;
+}
+
+
+
+.goods .images{
+    height: 100%;
+    width: 100%;
+}
+
+.goods .images image{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+
+.goods .intro{
+    display: flex;
+    min-height: 80vh;
+    width: 100%;
+    justify-content: space-between;
+    flex-direction: column;
+    z-index: 97;
+    position: absolute;
+    margin-top:55vh;
+    transition: all 0.5s ease;
+    background-color: white;
+    background-blend-mode: multiply;
+    backdrop-filter: blur(10px);
+    border-top-left-radius: 80rpx;
+    border-top-right-radius: 80rpx;
+}
+
+.goods .intro .all-info{
+    height: 37vh;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    width: 100%;
+    align-items:center;
+    border-top-left-radius: 80rpx;
+    border-top-right-radius: 80rpx;
+}
+
+
+.goods .all-info .a-main{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height:50%;
+    width: 94%;
+    margin-top:20rpx;
+}
+
+
+.all-info .a-main .m-text{
+    display: flex;
+    width: 60%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.all-info .a-main .m-text .price{
+    color:var(--price-color);
+    font-size: larger;
+    font-weight: bold;
+    height:41%;
+}
+
+.all-info .a-main .m-text .mark{
+    background-color: var(--mark-color);
+    font-size: small;
+    width:max-content;
+    height:18%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20rpx;
+    box-sizing: border-box;
+    padding:0 15rpx;
+    color: white;
+}
+
+.all-info .a-main .m-text .g-name{
+    font-size: medium;
+    font-weight: bold;
+    height:41%;
+    display: flex;
+    align-items: flex-end;
+}
+
+
+.goods .intro .all-info .a-main .u-info{
+    display: flex;
+    width: 40%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    
+
+}
+ .all-info .a-main .u-info image{
+    height:13vh;
+    width: 13vh;
+    border-radius: 50%;
+ }
+
+ .all-info .a-main .u-info .u-name{
+     width: 13vh;
+     overflow: hidden;
+     white-space: nowrap;
+     text-overflow: ellipsis;
+     text-align: center;
+ }
+
+ .all-info .a-main .u-info .id-box{
+  width: 13vh;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: flex;
+  justify-content: center;
+  margin-top: 2px;
+ }
+
+ .all-info .a-main .u-info .id-box .u-id{
+  width: fit-content;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: center;
+  font-size: small;
+  color:gray;
+  border:1px solid gray;
+  background-color: var(--theme-color);
+  padding:0 10rpx;
+  border-radius:10rpx ;
+}
+
+ /* 商品姓名与发布者姓名 */
+
+ .all-info .a-text{
+     height: 50%;
+     width: 94%;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     padding-top:25rpx;
+ }
+
+ .all-info .a-text .t-name{
+     width: 100%;
+     height:20%;
+     display: flex;
+     justify-content: space-between;
+     margin-top: 1%;
+    
+ }
+.all-info .a-text .t-name .g-name,.all-info .a-text .t-name .p-name{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    color:black;
+    justify-content: flex-start;
+    font-weight: bold;
+    font-size: larger;
+}
+
+.all-info .a-text .t-name .p-name{
+    justify-content: flex-end;
+}
+
+.all-info .a-text .t-brief{
+    min-height: 180rpx;
+    color:#4B4A54;
+    font-size:30rpx;
+    width: 100%;
+    padding:10rpx 0;
+}
+
+.all-info .a-text .t-tip{
+    height: 40%;
+    color:black;
+    font-size: large;
+    font-weight: bold;
+    width: 100%;
+}
+
+.all-info .a-text .t-tip .tip{
+    position: relative;
+}
+
+.all-info .a-text .t-tip .tip::after{
+    content: "";
+    position: absolute;
+    left:0;
+    bottom:-8rpx;
+    background-color: var(--mark-color);
+    width: 100%;
+    height: 8rpx;
+    border-radius: 4rpx;
+
+}
+
+ /* 评论区界面 */
+
+ .intro .comment-area{
+     height: 40vh;
+     background-color: white;
+     background-blend-mode: multiply;
+     opacity:0.9 ;
+     width: 100%;
+     display: flex;
+     flex-direction: column;
+     justify-content: flex-start;
+     align-items: center;
+     margin-bottom: 8vh;
+ }
+
+ .intro .comment-area .comment{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     height: 10vh;
+     width: 94%;
+ }
+
+ .intro .comment-area .comment image{
+     height: 8vh;
+     width: 8vh;
+     border-radius: 50%;
+ }
+
+ .intro .comment-area .comment .c-text{
+     width: calc(100% - 10vh);
+     height: 8vh;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     margin-left:2vw;
+ }
+
+ .intro .comment-area .comment .c-text .c-name{
+     font-size:smaller;
+     height:30%;
+     width: 100%;
+     display: flex;
+     justify-content: space-between;
+ }
+
+ .intro .comment-area .comment .c-text .c-name .n-info{
+   display: flex;
+ }
+
+ .intro .comment-area .comment .c-text .c-name .name{
+     width: fit-content;
+     margin-right: 10rpx;
+     
+ }
+
+ .intro .comment-area .comment .c-text .c-name .id{
+   color:gray;
+   width: fit-content;
+   padding:0 10rpx;
+   border-radius: 10rpx;
+   background-color: var(--theme-color);
+   border-radius: 10rpx;
+   font-size: 16rpx;
+   text-align: center;
+   display: flex;
+   align-items: center;
+  
+ }
+
+ .intro .comment-area .comment .c-text .c-content{
+     display: flex;
+     height: 70%;
+     width: 100%;
+     font-size: small;
+     align-items: center;
+     flex-wrap: wrap;
+     overflow-wrap: break-word;
+ }
+
+ .intro .c-content .msg{
+   height:fit-content;
+   width: 100%;
+   overflow-wrap: break-word;
+   
+ }
+
+/* .goods .all-info .personal .text,.goods .all-info .personal .sell{
+    width: 50%;
+    height: 15vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items:flex-start;
+    font-weight: 400;
+    font-family: "HarmonyOS Sans";
+}
+.goods .all-info .personal .text .price{
+    color:orange;
+    font-size: large;
+}
+.goods .all-info .personal .sell{
+    align-items: flex-end;
+}
+
+.goods .all-info .personal image{
+    height:150rpx;
+    width: 150rpx;
+    border-radius: 50%;
+}
+.goods .all-info .personal .sell text{
+    width: 150rpx;
+    text-align: center;
+}
+
+.intro .all-info .brief{  
+    height: 15vh;
+    width: 94%;
+    font-size: medium;
+    color:black;
+    font-family: "HarmonyOS Sans";
+    margin-top:2vh;
+} */
+
+.goods .bottom-box{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 8vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    z-index: 98;
+}
+
+.goods .bottom-box .box1{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.goods .bottom-box .box2{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ .bottom-box .one{
+    width: 30%;
+    height: 80%;
+    font-size: 30rpx;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20rpx;
+    background: white;
+}
+
+
+ .bottom-box .one .shoucang{
+    font-size: 50rpx;
+}
+
+ .bottom-box .one .dianpu{
+    font-size: 40rpx;
+}
+
+.bottom-box .two{
+    font-family: "HarmonyOS Sans";
+    width: 45%;
+    height: 80%;
+    background-color: var(--mark-color);
+    text-align: center;
+    border-radius: 20rpx;
+    white-space: nowrap;
+    font-size: 30rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+}
+
+.goods .intro .critique .title{
+    margin-left:2%;
+    font-size:large;
+    font-weight: bold;
+    position: relative;
+}
+
+
+.goods .intro .critique .title::after{
+    content:"";
+    width: 100%;
+    height:4px;
+    background-color: orange;
+    position: absolute;
+    bottom:-4px;
+    left:0;
+}
+
+/* 评论盒子 */
+.goods .comment-box{
+    position: fixed;
+    bottom:0;
+    transition: all .5s ease-in-out;
+    height:8vh;
+    width: 100%;
+    background-color: var(--theme-color);
+    backdrop-filter: blur(10px);
+    z-index:99999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.goods .comment-box input{
+    width:70%;
+    height: 60%;
+    color:black;
+    border-radius:20rpx;
+    border: 1px solid gray;
+    box-sizing: border-box;
+    margin-left:3vw;
+}
+
+.goods .comment-box button{
+    height:60%;
+    background-color: var(--mark-color);
+    width: 20%;
+    height: 60%;
+    font-size:medium;
+    white-space: nowrap;
+    font-weight: normal;
+    margin-right: 3vw;
+}

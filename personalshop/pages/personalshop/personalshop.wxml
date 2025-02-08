@@ -1,0 +1,67 @@
+<!-- s级商品 -->
+<van-card wx:for="{{slist}}" wx:key="{{index}}" bindtap="togood" data-rate="s"
+    num="{{item.business}}"
+    price="{{item.price}}"
+    desc="{{item.description}}"
+    title="{{item.name}}"
+    thumb="{{ item.pic }}"
+    tag="{{item.area}}"
+    >
+      <view slot="tags">
+        <text class="s1">求购价: {{item.purchase_price+1}}</text>
+      </view>
+</van-card>
+
+
+
+<!-- a级商品 -->
+<van-card wx:for="{{alist}}" wx:key="{{index}}" bindtap="togood" data-rate="a"
+    num="{{item.business}}"
+    price="{{item.price}}"
+    desc="{{item.description}}"
+    title="{{item.name}}"
+    thumb="{{ item.pic }}"
+    tag="{{item.area}}"
+    >
+      <view slot="tags">
+        <text class="s1">求购价: {{item.purchase_price+1}}</text>
+      </view>
+</van-card>
+
+
+
+
+<!-- b级商品 -->
+<van-card wx:for="{{blist}}" wx:key="{{index}}" bindtap="togood" data-rate="b" data-index="{{index}}"
+    num="{{item.business}}"
+    price="{{item.price}}"
+    desc="{{item.description}}"
+    title="{{item.name}}"
+    thumb="{{ item.pic }}"
+    tag="{{item.area}}"
+    >
+      <view slot="tags">
+        <text class="s1">求购价: {{item.purchase_price+1}}</text>
+      </view>
+</van-card>
+
+
+
+
+
+<!-- c级商品 -->
+<van-card wx:for="{{clist}}" wx:key="{{index}}" bindtap="togood" data-rate="c" data-index="{{index}}"
+    num="{{item.business}}"
+    price="{{item.price}}"
+    desc="{{item.description}}"
+    title="{{item.name}}"
+    thumb="{{ item.pic }}"
+    tag="{{item.area}}"
+    >
+      <view slot="tags">
+        <text class="s1">求购价: {{item.purchase_price+1}}</text>
+      </view>
+</van-card>
+
+
+

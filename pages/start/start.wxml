@@ -1,0 +1,6 @@
+<view class="auto" bindtap="togoods">
+  <view class="two" wx:if="{{jumpflag==1}}">
+    <van-button type="primary" size="normal" round color="rgba(0,0,0,0.3)" catchtap="jump">跳过</van-button>
+  </view>
+  <image style="width:100%;height:100%;" mode='aspectFill' src="{{pic}}"></image>
+</view>

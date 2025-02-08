@@ -1,0 +1,181 @@
+<van-tabs>
+  <van-tab title="求购中">
+  <!-- s商品求购中 -->
+    <van-card  wx:for="{{sgoodlist_ing}}" wx:key="id" bindtap="togood" data-rate="s" data-status="{{0}}" data-index="{{index}}"
+      num="{{item.business}}"
+      price="{{item.price}}"
+      desc="{{item.description}}"
+      title="{{item.name}}"
+      thumb="{{ item.pic }}"
+      tag="{{item.area}}"
+      >
+        <view slot="tags">
+          <text class="s1">当前求购价: {{item.purchase_price}}</text>
+          <view class="s1">求购用户: 本人</view>
+        </view>
+        <view slot="footer">
+          <van-button size="mini" catchtap="giveup" data-rate="s" data-status="{{0}}" data-index="{{index}}">放弃求购</van-button>
+        </view>
+    </van-card>
+
+    <!-- a级商品求购中 -->
+    <van-card  wx:for="{{agoodlist_ing}}" wx:key="id"  bindtap="togood" data-rate="a" data-status="{{0}}" data-index="{{index}}"
+      num="{{item.business}}"
+      price="{{item.price}}"
+      desc="{{item.description}}"
+      title="{{item.name}}"
+      thumb="{{ item.pic }}"
+      tag="{{item.area}}"
+      >
+        <view slot="tags">
+          <text class="s1">当前求购价: {{item.purchase_price}}</text>
+          <view class="s1">求购用户: 本人</view>
+        </view>
+        <view slot="footer">
+          <van-button size="mini" catchtap="giveup" data-rate="a" data-status="{{0}}" data-index="{{index}}">放弃求购</van-button>
+        </view>
+    </van-card>
+
+
+    <!-- b级商品求购中 -->
+    <van-card  wx:for="{{bgoodlist_ing}}" wx:key="id"  bindtap="togood" data-rate="b" data-status="{{0}}" data-index="{{index}}"
+      num="{{item.business}}"
+      price="{{item.price}}"
+      desc="{{item.description}}"
+      title="{{item.name}}"
+      thumb="{{ item.pic }}"
+      tag="{{item.area}}"
+      >
+        <view slot="tags">
+          <text class="s1">当前求购价: {{item.purchase_price}}</text>
+          <view class="s1">求购用户: 本人</view>
+        </view>
+        <view slot="footer">
+          <van-button size="mini" catchtap="giveup" data-rate="b" data-status="{{0}}" data-index="{{index}}">放弃求购</van-button>
+        </view>
+    </van-card>
+
+
+
+    <!-- c级商品求购 -->
+    <van-card  wx:for="{{cgoodlist_ing}}" wx:key="id"   bindtap="togood" data-rate="c" data-status="{{0}}" data-index="{{index}}"
+      num="{{item.business}}"
+      price="{{item.price}}"
+      desc="{{item.description}}"
+      title="{{item.name}}"
+      thumb="{{ item.pic }}"
+      tag="{{item.area}}"
+      >
+        <view slot="tags">
+          <text class="s1">当前求购价: {{item.purchase_price}}</text>
+          <view class="s1">求购用户: 本人</view>
+        </view>
+        <view slot="footer">
+          <van-button size="mini"  catchtap="giveup" data-rate="c" data-status="{{0}}" data-index="{{index}}">放弃求购</van-button>
+        </view>
+    </van-card>
+    <view class="zhan"></view>
+  </van-tab>
+
+
+  <!-- dialog -->
+<van-dialog id="van-dialog" />
+
+
+
+
+
+
+
+
+
+  <van-tab title="交易中">
+    <!-- s级商品交易中 -->
+    <van-card  wx:for="{{sgoodlist_end}}" wx:key="id" bindtap="togood" data-rate="s" data-status="{{1}}" data-index="{{index}}"
+      num="{{item.business}}"
+      price="{{item.price}}"
+      desc="{{item.description}}"
+      title="{{item.name}}"
+      thumb="{{ item.pic }}"
+      tag="{{item.area}}"
+      >
+        <view slot="tags">
+          <text class="s1">最终求购价: {{item.purchase_price}}</text>
+          <view class="s1">求购用户: 本人</view>
+        </view>
+        <view slot="footer">
+          <van-button size="mini" type="info" catchtap="tochannel" 
+          data-id="{{'s'+item.id}}" data-name="{{item.name}}">前往消息通道</van-button>
+          <van-button size="mini" type="primary" catchtap="confirmfinish" data-rate="s" data-id="{{item.id}}">确认交易完成</van-button>
+        </view>
+    </van-card>
+
+
+
+    <!-- a级商品交易中 -->
+    <van-card  wx:for="{{agoodlist_end}}" wx:key="id"  bindtap="togood" data-rate="a" data-status="{{1}}" data-index="{{index}}"
+      num="{{item.business}}"
+      price="{{item.price}}"
+      desc="{{item.description}}"
+      title="{{item.name}}"
+      thumb="{{ item.pic }}"
+      tag="{{item.area}}"
+      >
+        <view slot="tags">
+          <text class="s1">最终求购价: {{item.purchase_price}}</text>
+          <view class="s1">求购用户: 本人</view>
+        </view>
+        <view slot="footer">
+          <van-button size="mini" type="info" catchtap="tochannel" 
+          data-id="{{'a'+item.id}}" data-name="{{item.name}}">前往消息通道</van-button>
+          <van-button size="mini" type="primary" catchtap="confirmfinish" data-rate="a" data-id="{{item.id}}">确认交易完成</van-button>
+        </view>
+    </van-card>
+
+
+    <!-- b级商品交易中 -->
+    <van-card  wx:for="{{bgoodlist_end}}" wx:key="id"  bindtap="togood" data-rate="b" data-status="{{1}}" data-index="{{index}}"
+      num="{{item.business}}"
+      price="{{item.price}}"
+      desc="{{item.description}}"
+      title="{{item.name}}"
+      thumb="{{ item.pic }}"
+      tag="{{item.area}}"
+      >
+        <view slot="tags">
+          <text class="s1">最终求购价: {{item.purchase_price}}</text>
+          <view class="s1">求购用户: 本人</view>
+        </view>
+        <view slot="footer">
+          <van-button size="mini" type="info" catchtap="tochannel" 
+          data-id="{{'b'+item.id}}" data-name="{{item.name}}">前往消息通道</van-button>
+          <van-button size="mini" type="primary" catchtap="confirmfinish" data-rate="b" data-id="{{item.id}}">确认交易完成</van-button>
+        </view>
+    </van-card>
+
+
+
+
+    <!-- c级商品交易中 -->
+    <van-card  wx:for="{{cgoodlist_end}}" wx:key="id"   bindtap="togood" data-rate="c" data-status="{{1}}" data-index="{{index}}"
+      num="{{item.business}}"
+      price="{{item.price}}"
+      desc="{{item.description}}"
+      title="{{item.name}}"
+      thumb="{{ item.pic }}"
+      tag="{{item.area}}"
+      >
+        <view slot="tags">
+          <text class="s1">最终求购价: {{item.purchase_price}}</text>
+          <view class="s1">求购用户: 本人</view>
+        </view>
+        <view slot="footer">
+          <van-button size="mini" type="info"  catchtap="tochannel" 
+          data-id="{{item.id}}" data-name="{{item.name}}">前往消息通道</van-button>
+          <van-button size="mini" type="primary" catchtap="confirmfinish" data-rate="c" data-id="{{item.id}}">确认交易完成</van-button>
+        </view>
+    </van-card>
+  </van-tab>
+  <view class="zhan"></view>
+</van-tabs>
+

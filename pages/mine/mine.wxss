@@ -1,0 +1,261 @@
+@import "../../utils/all.wxss";
+.one{
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(228, 226, 216);
+}
+
+.two{
+  display: flex;
+  flex-direction: row;
+  margin-left: 30rpx;
+  margin-top: 30rpx;
+}
+
+.three{
+  width: 300rpx;
+  height: 60rpx;
+  margin-left: 60rpx;
+  margin-top: 80rpx;
+  font-size: 49rpx;
+  letter-spacing: 12rpx;
+  background-color: #f0f0f0;
+  line-height: 49rpx;
+  border-radius: 12rpx;
+}
+
+
+.four{
+  width: 300rpx;
+  height: 60rpx;
+  margin-left: 60rpx;
+  margin-top: 80rpx;
+  font-size: 49rpx;
+  letter-spacing: 3rpx;
+  line-height: 49rpx;
+  overflow: hidden; 
+  white-space: nowrap; 
+  text-overflow: ellipsis; 
+}
+
+.five{
+  display: flex;
+  flex-direction: row;
+  width: 300rpx;
+  height: 100rpx;
+  margin: 30rpx auto;
+  background-color: white;
+  border-radius: 12rpx;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: larger;
+}
+
+.six{
+  display: flex;
+  flex-direction: row;
+}
+
+
+.seven{
+  width: 600rpx;
+  text-align: center;
+}
+
+
+
+/* pages/biodata/biodata.wxss */
+
+
+@import "../../fonts/goodsicon/iconfont.wxss";
+@import "../../icon/gerenxinxi/iconfont.wxss";
+
+.biodata{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color:white;
+}
+
+.biodata .gray{
+  background-color:#eeecec
+}
+
+
+.biodata .primary-data{
+    margin-top:2vh;
+    width: 96%;
+    height: 25vh;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2),
+    inset 10px 10px 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    padding-left: 2%;
+    padding-right:2%;
+    border-radius: 20rpx;
+    display: flex;
+    align-items: center;
+
+}
+
+.biodata .primary-data image{
+    height:18vh;
+    width: 18vh;
+    border-radius: 50%;
+}
+
+.biodata .primary-data .p-text{
+    margin-left: 3vh;    
+    height: 18vh;
+    width: calc(100% - 22vh);
+    color:black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.biodata .primary-data .p-text .p-name{
+    font-size: larger;
+    color:black;
+    width: 100%;
+    white-space: nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+.biodata .primary-data .p-text .p-id{
+  margin-top: 10rpx;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  width: 100%;
+}
+.biodata .primary-data .p-text .p-id .id-box{
+  width: max-content;
+  box-sizing: border-box;
+  padding: 0 10rpx;
+  white-space: nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  border-radius: 5rpx;
+  font-size:20rpx;
+  color:gray;
+  border: 1px solid gray;
+  background-color: var(--theme-color);
+}
+
+.biodata .server{
+    margin-top:5vh;
+    width: 96%;
+    height: 15vh;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 20rpx;
+
+}
+
+.biodata .server .func{
+    width: 20%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+.biodata .server .func .iconfont{
+    width: 100%;
+    height: 80%;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2),
+    inset 5px 5px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 80rpx;
+    border-radius: 20rpx;
+    transition: all .2s ease;
+}
+
+.biodata .server .func .iconfont-hover{
+    box-shadow:inset 5px 5px 10px rgba(0, 0, 0, 0.2),
+     5px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.biodata .server .func .tishi{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: small;
+    margin-top: 10rpx;
+}
+
+.biodata .else{
+    width: 96%;
+    margin-top:5vh ;
+    height: 35vh;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    border-bottom-right-radius: 20rpx;
+    border-bottom-left-radius: 20rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    border-radius: 20rpx;
+}
+
+.biodata .else .box{
+    
+    width: 100%;
+    height: 20%;
+    display: flex;                                                                                                                                                                          
+    align-items: center;
+}
+
+.biodata .else .hover-box{
+    background-color: rgb(240, 238, 238);
+}
+
+.biodata .else .box .direc{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    width: 90%;
+    justify-content: space-between;
+}
+
+.biodata .else .box .direc .iconfont{
+    color:gray;
+    margin-right: 2%;
+}
+.biodata   .else .box image{
+  width: 45rpx;
+  height: 45rpx;
+  margin:0 20rpx;
+}
+
+.biodata   .else .box .box-icon{
+    height: 100%;
+    width: 10%;
+    display: flex;
+    align-items: center;
+    font-size: 40rpx;
+    margin-left:2%;
+}
+
+.biodata .else .box .box-larger{
+    font-size: 45rpx;
+}
+
+.biodata .else .box .box-icon1{
+    color: red;
+}
+
+.biodata .else .box .cancel{
+    border:none;
+}

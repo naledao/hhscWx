@@ -1,0 +1,17 @@
+.one{
+  margin-left: 30rpx;
+  margin-top: 30rpx;
+  color: rgb(133, 130, 128);
+}
+
+.two{
+  margin-top: 20rpx;
+}
+
+.three{
+  margin-top: 30rpx;
+}
+
+page{
+  background-color: #f0f0f0;
+}

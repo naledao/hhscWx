@@ -1,0 +1,247 @@
+<van-tabs>
+  <van-tab title="全部">
+    <!-- s级商品全部 -->
+    <van-card  wx:for="{{slist_all}}" wx:key="id" bindtap="togood"  data-rate="s"
+    data-status="0" data-index="{{index}}"
+      price="{{item.price}}"
+      desc="{{item.description}}"
+      title="{{item.name}}"
+      thumb="{{ item.pic }}"
+      tag="{{item.area}}"
+      >
+        <view slot="tags">
+          <text class="s1">当前求购价: {{item.purchase_price}}</text>
+          <view class="s1">求购用户: {{item.buysername}}</view>
+        </view>
+        <view slot="footer">
+          <van-button size="mini" catchtap="deletegood" data-index="{{index}}" data-rate="s" data-status="all">删除商品</van-button>
+        </view>
+    </van-card>
+
+    <!-- a级商品全部 -->
+    <van-card  wx:for="{{alist_all}}" wx:key="id"  bindtap="togood"  data-rate="a"
+    data-status="0" data-index="{{index}}" 
+      price="{{item.price}}"
+      desc="{{item.description}}"
+      title="{{item.name}}"
+      thumb="{{ item.pic }}"
+      tag="{{item.area}}"
+      >
+        <view slot="tags">
+          <text class="s1">当前求购价: {{item.purchase_price}}</text>
+          <view class="s1">求购用户: {{item.buysername}}</view>
+        </view>
+        <view slot="footer">
+          <van-button size="mini" catchtap="deletegood" data-index="{{index}}" data-rate="a" data-status="all">删除商品</van-button>
+        </view>
+    </van-card>
+
+    <!-- b级商品全部 -->
+    <van-card  wx:for="{{blist_all}}" wx:key="id"  bindtap="togood"  data-rate="b"
+    data-status="0" data-index="{{index}}" 
+      price="{{item.price}}"
+      desc="{{item.description}}"
+      title="{{item.name}}"
+      thumb="{{ item.pic }}"
+      tag="{{item.area}}"
+      >
+        <view slot="tags">
+          <text class="s1">当前求购价: {{item.purchase_price}}</text>
+          <view class="s1">求购用户: {{item.buyername}}</view>
+        </view>
+        <view slot="footer">
+          <van-button size="mini" catchtap="deletegood" data-index="{{index}}" data-rate="b" data-status="all">删除商品</van-button>
+        </view>
+    </van-card>
+
+    <!-- c级商品求购 -->
+    <van-card  wx:for="{{clist_all}}" wx:key="id"   bindtap="togood"  data-rate="c"
+    data-status="0" data-index="{{index}}" 
+      price="{{item.price}}"
+      desc="{{item.description}}"
+      title="{{item.name}}"
+      thumb="{{ item.pic }}"
+      tag="{{item.area}}"
+      >
+        <view slot="tags">
+          <text class="s1">当前求购价: {{item.purchase_price}}</text>
+          <view class="s1">求购用户: {{item.buyername}}</view>
+        </view>
+        <view slot="footer">
+          <van-button size="mini" catchtap="deletegood" data-index="{{index}}" data-rate="c" data-status="all">删除商品</van-button>
+        </view>
+    </van-card>
+  </van-tab>
+
+
+
+  <van-tab title="求购中">
+    <!-- s级商品求购中 -->
+    <van-card  wx:for="{{slist_ing}}" wx:key="id"  bindtap="togood"  data-rate="s"
+    data-status="1" data-index="{{index}}" 
+      price="{{item.price}}"
+      desc="{{item.description}}"
+      title="{{item.name}}"
+      thumb="{{ item.pic }}"
+      tag="{{item.area}}"
+      >
+        <view slot="tags">
+          <text class="s1">当前求购价: {{item.purchase_price}}</text>
+          <view class="s1">求购用户: {{item.buysername}}</view>
+        </view>
+        <view slot="footer">
+          <van-button size="mini" catchtap="deletegood" data-index="{{index}}" data-rate="s" data-status="ing">删除商品</van-button>
+          <van-button size="mini" catchtap="endpur" data-rate="s" data-index="{{index}}">终止求购</van-button>
+        </view>
+    </van-card>
+
+    <!-- a级商品求购中 -->
+    <van-card  wx:for="{{alist_ing}}" wx:key="id"  bindtap="togood"  data-rate="a"
+    data-status="1" data-index="{{index}}" 
+      price="{{item.price}}"
+      desc="{{item.description}}"
+      title="{{item.name}}"
+      thumb="{{ item.pic }}"
+      tag="{{item.area}}"
+      >
+        <view slot="tags">
+          <text class="s1">当前求购价: {{item.purchase_price}}</text>
+          <view class="s1">求购用户: {{item.buysername}}</view>
+        </view>
+        <view slot="footer">
+          <van-button size="mini" catchtap="deletegood" data-index="{{index}}" data-rate="a" data-status="ing">删除商品</van-button>
+          <van-button size="mini" catchtap="endpur" data-rate="a" data-index="{{index}}">终止求购</van-button>
+        </view>
+    </van-card>
+
+    <!-- b级商品求购中 -->
+    <van-card  wx:for="{{blist_ing}}" wx:key="id"  bindtap="togood"  data-rate="b"
+    data-status="1" data-index="{{index}}" 
+      price="{{item.price}}"
+      desc="{{item.description}}"
+      title="{{item.name}}"
+      thumb="{{ item.pic }}"
+      tag="{{item.area}}"
+      >
+        <view slot="tags">
+          <text class="s1">当前求购价: {{item.purchase_price}}</text>
+          <view class="s1">求购用户: {{item.buyername}}</view>
+        </view>
+        <view slot="footer">
+          <van-button size="mini" catchtap="deletegood" data-index="{{index}}" data-rate="b" data-status="ing">删除商品</van-button>
+          <van-button size="mini" catchtap="endpur" data-rate="b" data-index="{{index}}">终止求购</van-button>
+        </view>
+    </van-card>
+
+
+    <!-- c级商品求购中 -->
+    <van-card  wx:for="{{clist_ing}}" wx:key="id"  bindtap="togood"  data-rate="c"
+    data-status="1" data-index="{{index}}" 
+      price="{{item.price}}"
+      desc="{{item.description}}"
+      title="{{item.name}}"
+      thumb="{{ item.pic }}"
+      tag="{{item.area}}"
+      >
+        <view slot="tags">
+          <text class="s1">当前求购价: {{item.purchase_price}}</text>
+          <view class="s1">求购用户: {{item.buyername}}</view>
+        </view>
+        <view slot="footer">
+          <van-button size="mini" catchtap="deletegood" data-index="{{index}}" data-rate="c" data-status="ing">删除商品</van-button>
+          <van-button size="mini" catchtap="endpur" data-rate="c" data-index="{{index}}">终止求购</van-button>
+        </view>
+    </van-card>
+  </van-tab>
+
+
+
+  <van-tab title="交易中">
+    <!-- s级商品交易中 -->
+    <van-card  wx:for="{{slist_end}}" wx:key="id"  bindtap="togood"  data-rate="s"
+    data-status="2" data-index="{{index}}" 
+      price="{{item.price}}"
+      desc="{{item.description}}"
+      title="{{item.name}}"
+      thumb="{{ item.pic }}"
+      tag="{{item.area}}"
+      >
+        <view slot="tags">
+          <text class="s1">最终求购价: {{item.purchase_price}}</text>
+          <view class="s1">求购用户: {{item.buysername}}</view>
+        </view>
+        <view slot="footer">
+          <van-button size="mini" type="info" catchtap="tochannel" 
+          data-id="{{'s'+item.id}}" data-name="{{item.name}}">前往消息通道</van-button>
+          <van-button size="mini" type="primary" catchtap="confirmfinish" data-rate="s" data-id="{{item.id}}">确认交易完成</van-button>
+        </view>
+    </van-card>
+
+    <!-- a级商品交易中 -->
+    <van-card  wx:for="{{alist_end}}" wx:key="id"  bindtap="togood"  data-rate="a"
+    data-status="2" data-index="{{index}}" 
+      price="{{item.price}}"
+      desc="{{item.description}}"
+      title="{{item.name}}"
+      thumb="{{ item.pic }}"
+      tag="{{item.area}}"
+      >
+        <view slot="tags">
+          <text class="s1">最终求购价: {{item.purchase_price}}</text>
+          <view class="s1">求购用户: {{item.buysername}}</view>
+        </view>
+        <view slot="footer">
+          <van-button size="mini" type="info" catchtap="tochannel" 
+          data-id="{{'a'+item.id}}" data-name="{{item.name}}">前往消息通道</van-button>
+          <van-button size="mini" type="primary" catchtap="confirmfinish" data-rate="a" data-id="{{item.id}}">确认交易完成</van-button>
+        </view>
+    </van-card>
+
+    <!-- b级商品交易中 -->
+    <van-card  wx:for="{{blist_end}}" wx:key="id"  bindtap="togood"  data-rate="b"
+    data-status="2" data-index="{{index}}"
+      price="{{item.price}}"
+      desc="{{item.description}}"
+      title="{{item.name}}"
+      thumb="{{ item.pic }}"
+      tag="{{item.area}}"
+      >
+        <view slot="tags">
+          <text class="s1">最终求购价: {{item.purchase_price}}</text>
+          <view class="s1">求购用户: {{item.buyername}}</view>
+        </view>
+        <view slot="footer">
+          <van-button size="mini" type="info" catchtap="tochannel" 
+          data-id="{{'b'+item.id}}" data-name="{{item.name}}">前往消息通道</van-button>
+          <van-button size="mini" type="primary" catchtap="confirmfinish" data-rate="b" data-id="{{item.id}}">确认交易完成</van-button>
+        </view>
+    </van-card>
+
+    <!-- c级商品交易中 -->
+    <van-card  wx:for="{{clist_end}}" wx:key="id"  bindtap="togood"  data-rate="c"
+    data-status="2" data-index="{{index}}" 
+      price="{{item.price}}"
+      desc="{{item.description}}"
+      title="{{item.name}}"
+      thumb="{{ item.pic }}"
+      tag="{{item.area}}"
+      >
+        <view slot="tags">
+          <text class="s1">最终求购价: {{item.purchase_price}}</text>
+          <view class="s1">求购用户: {{item.buyername}}</view>
+        </view>
+        <view slot="footer">
+          <van-button size="mini" type="info" catchtap="tochannel" 
+          data-id="{{item.id}}" data-name="{{item.name}}">前往消息通道</van-button>
+          <van-button size="mini" type="primary" catchtap="confirmfinish" data-rate="c" data-id="{{item.id}}">确认交易完成</van-button>
+        </view>
+    </van-card>
+  </van-tab>
+</van-tabs>
+
+
+
+
+<!-- dialog -->
+<van-dialog id="van-dialog" />
+

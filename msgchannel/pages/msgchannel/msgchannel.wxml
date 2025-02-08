@@ -1,0 +1,26 @@
+<view class="one">
+  <scroll-view scroll-y="true" scroll-into-view="{{i}}" style="height: {{2*top-60+'rpx'}};">
+    <view wx:for="{{message}}" wx:key="id" id="{{item.id}}">
+      <view class="last1">{{item.time}}</view>
+      <!-- 自己的消息对象 -->
+      <view  wx:if="{{item.openid==openid}}" class="left">
+        <van-image round width="60rpx" height="60rpx" fit="cover" src="{{item.pic}}"/>
+        <view class="six" bindtap="fuzhi" data-index="{{item.msg}}">{{item.msg}}</view>
+      </view>
+      <!-- 他人的消息对象 -->
+      <view  wx:if="{{item.openid!=openid}}" class="right">
+        <van-image round width="60rpx" height="60rpx" fit="cover" src="{{item.pic}}"/>
+        <view class="seven" bindtap="fuzhi" data-index="{{item.msg}}">
+          {{item.msg}}
+        </view>
+      </view>
+    </view>
+    <view class="zhan"></view>
+  </scroll-view>
+</view>
+  <!-- 用户发送消息 -->
+<view class="four">
+      <textarea class="three"   placeholder="请输入信息" 	auto-height="{{true}}" hold-keyboard="{{true}}" 	fixed="{{true}}" rows="3" show-confirm-bar = "{{false}}" cursor-spacing="{{24}}"  value="{{sms}}" bindinput="changesms"></textarea>
+      <button class="fl" bindtap="tosms">发送</button>
+</view>
+

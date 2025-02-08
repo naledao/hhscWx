@@ -1,0 +1,144 @@
+@import '../../utils/all.wxss';
+.ai{
+  display: flex;
+  width:100vw;
+  justify-content: center;
+  height: fit-content;
+  background: var(--bottom-color);
+}
+
+
+
+.ai .ai-conversation{
+  min-height:94vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin-bottom: 4vh;
+}
+
+.ai .ai-conversation .robot,.ai .ai-conversation .user{
+  display: flex;
+  flex-wrap: nowrap;
+  width: fit-content;
+  width: 100vw;
+  margin-bottom: 10px;
+  justify-content: flex-start;
+}
+
+.ai .ai-conversation .user{
+  flex-direction: row-reverse;
+}
+
+.ai .ai-conversation .user .user-image,.ai .ai-conversation .robot .robot-image{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin:0 5px;
+}
+
+.ai .ai-conversation .user .user-answer,.ai .ai-conversation .robot .robot-answer{
+  max-width:75%;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  word-break: break-all;
+  padding:10px;
+  background: white;
+  border-radius: 10px;
+}
+
+
+
+
+
+.ai .ai-bottom{
+  position: fixed;
+  bottom:0;
+  left:0;
+  height: fit-content;
+  min-height: 6vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  justify-content: space-between;
+  background-color: top;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: white;
+}
+
+.ai .ai-bottom .question{
+  flex: 10;
+  min-height: 3vh;
+  border-radius:5px;
+  box-sizing: border-box;
+  border:1px solid gray;
+}
+
+.ai .ai-bottom .send{
+  flex: 2;
+  /* width:fit-content; */
+  height: 3vh;
+  font-size: medium;
+  line-height:3vh;
+  padding:0 5rpx;
+  margin:0 2rpx;
+}
+
+.ai .ai-bottom .send3{
+  color: rgb(219, 155, 159);
+  flex: 4;
+  /* width:fit-content; */
+  height: 3vh;
+  font-size: medium;
+  line-height:3vh;
+  padding:0 5rpx;
+  margin:0 2rpx;
+}
+
+.ai .ai-bottom .send2{
+  color: burlywood;
+  flex: 4;
+  /* width:fit-content; */
+  height: 3vh;
+  font-size: medium;
+  line-height:3vh;
+  padding:0 5rpx;
+  margin:0 2rpx;
+}
+.ai .last1{
+  text-align: center;
+  margin: 10rpx 0;
+}
+
+/* 服务错误 */
+.error{
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.error .keep{
+  display: flex;
+  max-width:80vw;
+  height: fit-content;
+  flex-direction: column;
+}
+
+.error .keep image{
+  width: 100%;
+  max-height:80vw;
+}
+.error .keep text{
+  text-align: center;
+}
+
+.ai .tianchong{
+  height: 20rpx;
+}
+
+
+

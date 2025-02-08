@@ -1,0 +1,79 @@
+<!-- 未绑定邮箱 -->
+<view wx:if="{{check==true}}">
+  <view class="two">tips:绑定邮箱后，可获取最新商品交易信息以及其他相关信息，建议绑定邮箱</view>
+  <view class="one"> <van-button type="primary" block bindtap="starttrue">立即绑定</van-button></view>
+</view>
+
+
+
+<!-- 开始绑定邮箱 -->
+<view wx:if="{{start==true}}">
+  <view>
+    <van-cell-group>
+      <van-field
+        value="{{ email }}"
+        label="邮箱"
+        center
+        clearable
+        placeholder="请输入邮箱"
+        border="{{ false }}"
+        maxlength="{{30}}"
+        bind:change="onChangeemail"
+      />
+   </van-cell-group>
+  </view>
+  <view>
+    <van-cell-group>
+      <van-field
+        value="{{ sms }}"
+        center
+        clearable
+        label="邮箱验证码"
+        placeholder="请输入邮箱验证码"
+        border="{{ false }}"
+        maxlength="{{6}}"
+        use-button-slot
+        bind:change="onChangecode"
+      >
+        <van-button slot="button" size="small" type="primary" wx:if="{{send==true}}" bindtap="getsms">
+          获取验证码
+        </van-button>
+        <van-button slot="button" size="small" type="primary" disabled="true"  wx:if="{{send==false}}">
+          {{time}}秒
+        </van-button>
+      </van-field>
+    </van-cell-group>
+  </view>
+  <view>
+    <van-button type="primary" block bindtap="confirmbind">验证绑定</van-button>
+  </view>
+  <view class="two">
+    tips:  如果你绑定是QQ邮箱（建议绑定QQ邮箱），建议微信也绑定该邮箱并在微信中开启QQ邮箱提醒功能，如果开启后仍无法通过微信接收邮箱消息，你可以进行如下操作:
+  </view>
+  <view class="two">
+    打开QQ邮箱App ->  打开设置  ->  点击第一个【新邮件提醒】  ->找到只有你QQ邮箱的那一行点击  ->  将 【仅在QQ邮箱客户端提醒】 这一项关闭 即可
+  </view>
+</view>
+
+
+
+<!-- 倒计时 -->
+<van-count-down use-slot time="{{ sectime }}" bind:change="onChangetime">
+</van-count-down>
+
+
+
+<!-- 已绑定邮箱 -->
+<view class="three" wx:if="{{bind==true}}">
+  <view class="four">已绑定的邮箱</view>
+  <view class="five">{{email}}</view>
+  <view class="six">
+    <button bindtap="getdeldialog">删除</button>
+    <button type="primary" bindtap="changeemail">修改</button>
+  </view>
+</view>
+
+
+
+<!-- dialog -->
+<van-dialog id="van-dialog" />

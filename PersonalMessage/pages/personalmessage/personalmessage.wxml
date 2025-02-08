@@ -1,0 +1,39 @@
+<view>
+  <!-- 头像 -->
+  <view class="one" bindtap="showchangehead">
+    <view style="margin-left: 30rpx; font-size: larger;">头像</view>
+    <view class="two">
+      <van-image round width="3rem" height="3rem" src="{{head}}"/>
+    </view>
+    <text class="iconfont .icon-xuanzeqixiayige"></text>
+  </view>
+
+  <!-- 修改头像弹出框 -->
+  <van-popup show="{{ showhead }}"  position="bottom" custom-style="height: 100%" bind:close="onClose" closeable="true">
+    <view class="three">
+      <van-button type="primary"  block style="margin-top: 30rpx;" bindtap="choosehead">点击选择头像</van-button>
+    </view>
+  </van-popup>
+
+
+
+  <!-- 昵称 -->
+  <view class="one" bindtap="showPopup">
+    <view style="margin-left: 30rpx; font-size: larger;">昵称</view>
+    <view class="two">
+      <text style="margin-left: 30rpx; font-size: larger;">{{name}}</text>
+    </view>
+    <text class="iconfont .icon-xuanzeqixiayige"></text>
+  </view>
+
+
+
+  <!-- 修改名称弹出框 -->
+  <van-popup show="{{ show }}"  position="bottom" custom-style="height: 100%" bind:close="onClose" closeable="true">
+    <view class="three">
+      <van-field value="{{ temname }}" placeholder="请输入昵称" border="{{ false }}" bind:change="onChangename" input-align="center" maxlength="16" size="large"/>
+      <van-button type="primary"  block style="margin-top: 30rpx;" bindtap="confirmname">确认修改</van-button>
+    </view>
+  </van-popup>
+
+</view>

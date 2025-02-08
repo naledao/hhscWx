@@ -1,0 +1,118 @@
+{
+  "pages": [
+    "pages/start/start",
+    "pages/index/index",
+    "pages/purchase/purchase",
+    "pages/message/message",
+    "pages/collection/collection",
+    "pages/mine/mine",
+    "pages/logs/logs",
+    "pages/aipage/aipage"
+  ],
+  "subPackages": [
+    {
+      "root": "goods",
+      "pages": [
+        "pages/goods/goods"
+      ]
+    },
+    {
+      "root": "browsehis",
+      "pages": [
+        "pages/browsehis/browsehis"
+      ]
+    },
+    {
+      "root": "releasegood",
+      "pages": [
+        "pages/releasegood/releasegood"
+      ]
+    },
+    {
+      "root": "keyhis",
+      "pages": [
+        "pages/keyhis/keyhis"
+      ]
+    },
+    {
+      "root": "personalshop",
+      "pages": [
+        "pages/personalshop/personalshop"
+      ]
+    },
+    {
+      "root": "email",
+      "pages": [
+        "pages/email/email"
+      ]
+    },
+    {
+      "root": "mineshop",
+      "pages": [
+        "pages/mineshop/mineshop"
+      ]
+    },
+    {
+      "root": "msgchannel",
+      "pages": [
+        "pages/msgchannel/msgchannel"
+      ]
+    },
+    {
+      "root": "Feedback",
+      "pages": [
+        "pages/Feedback/Feedback"
+      ]
+    },
+    {
+      "root": "instructions",
+      "pages": [
+        "pages/instructions/instructions"
+      ]
+    },
+    {
+      "root": "about",
+      "pages": [
+        "pages/about/about"
+      ]
+    },
+    {
+      "root": "PersonalMessage",
+      "pages": [
+        "pages/personalmessage/personalmessage"
+      ]
+    }
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "黄淮市场",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "custom": true,
+    "list":[
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/purchase/purchase",
+        "text": "求购区"
+      },
+      {
+        "pagePath": "pages/message/message",
+        "text": "消息"
+      },
+      {
+        "pagePath": "pages/collection/collection",
+        "text": "收藏"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的"
+      }
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+page{
+  --notiable-color:#2b333e;
+  --back-color:#FF8C5B;
+  --mark-color:#FF8C5B;
+  --bottom-color:#e7e7df;
+  --theme-color:#f8f4ed;
+  --button-unselect-color:#7FD1AE;
+  --button-select-color:#00917D;
+  --price-color:#C4515E;
+  --commodity-button-color:#FFD9C2;
+
+
+}

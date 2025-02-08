@@ -1,0 +1,90 @@
+
+<van-notice-bar scrollable text="{{rollgood.description}}" bindtap="toagood"/>
+<view class="container">
+
+  <!-- 商品展示 -->
+  <view class="goods-box">
+    <view class="search-box">
+      <view class="s-inner">
+        <input type="text" bindinput="onSearch"  placeholder="{{guanjianci}}"/>
+        <button bindtap="confirms">
+          <text class="iconfont icon-sousuotianchong"></text>
+        </button>
+      </view>
+    </view>
+
+    <view class="c-navigator">
+      <view class="fixed-sec">
+        <swiper class="goods-promotion" indicator-dots="true"  autoplay="true" circular="true">
+          <swiper-item wx:for="{{slidegoodslist[0]}}" wx:key="index">
+            <image src="{{item.pic}}" mode="aspectFill" class="two" bindtap="tobgood" data-good="{{item}}"></image>
+          </swiper-item>
+        </swiper>
+      </view>
+    </view>
+  <!-- 分类区 -->
+    <view class="sticky-sort">
+        <button class="sort" style="{{all_btn}}" bindtap="changearea" data-area="all"><text>全部</text></button>
+        <button class="sort" style="{{south_btn}}" bindtap="changearea" data-area="south"><text>南区</text></button>
+        <button class="sort" style="{{north_btn}}" bindtap="changearea" data-area="north"><text>北区</text></button>
+        <button class="sort" style="{{hospital_btn}}" bindtap="changearea" data-area="hospital"><text>医学院</text></button>
+    </view>
+    <view class="exhibition">
+      <!-- 启动页静置 -->
+      <view class="leftbox">
+          <view class="single-good recommend" bindtap="tosgood">
+              <image src="{{sgoodsonly.pic}}" mode="aspectFill"></image>
+              <view class="info">
+                <text class="n-recommend">{{sgoodsonly.name}}</text>
+                <view class="price-box">
+                  <view class="bp">
+                    <text class="biaozhi">￥</text>
+                    <text class="price">{{sgoodsonly.price}}</text>
+                  </view>
+                  <text class="w-price">{{sgoodsonly.purchase_price+1}}</text>
+                </view>
+                <view class="mark-box">
+                    <text class="mark">{{item.area}}</text>
+                </view>
+              </view>
+          </view>
+          <view wx:for="{{goodslist}}" wx:key="index" class="single-good" wx:if="{{index%2!=0}}" bindtap="togoods">
+              <image src="{{item.pic}}" mode="aspectFill"  data-index="{{index}}"></image>
+              <view class="info">
+                <text class="name">{{item.name}}</text>
+                <view class="price-box">
+                  <view class="bp">
+                    <text class="biaozhi">￥</text>
+                    <text class="price">{{item.price}}</text>
+                  </view>
+                  <text class="w-price">{{item.purchase_price+1}}</text>
+                </view>
+                <text class="mark">{{item.area}}</text>
+              </view>
+          </view>
+      </view>
+
+     <view class="rightbox">
+        <view wx:for="{{goodslist}}" wx:key="index" bindtap="togoods" data-index="{{index}}" class="single-good" wx:if="{{index%2==0}}">
+                <image src="{{item.pic}}" mode="aspectFill"  data-index="{{index}}"></image>
+                <view class="info">
+                  <text class="name">{{item.name}}</text>
+                  <view class="price-box">
+                  <view class="bp">
+                    <text class="biaozhi">￥</text>
+                    <text class="price">{{item.price}}</text>
+                  </view>
+                  <text class="w-price">{{item.purchase_price+1}}</text>
+                  </view>
+                  <view class="mark-box">
+                    <text class="mark">{{item.area}}</text>
+                  </view>
+                </view>
+      </view>
+     </view>
+     <view class="tip">我也是有底线的~</view>
+    </view>
+    </view>
+
+</view>
+

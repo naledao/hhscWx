@@ -1,0 +1,9 @@
+.s1{
+  color: rgb(209, 223, 132);
+}
+
+
+.zhan{
+  width: 100%;
+  height: 60rpx;
+}

@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "van-card": "@vant/weapp/card/index"
+  },
+  "enablePullDownRefresh": true,
+  "backgroundColor": "#efefef",
+  "backgroundTextStyle": "dark"
+}

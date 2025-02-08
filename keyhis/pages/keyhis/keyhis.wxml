@@ -1,0 +1,40 @@
+<view wx:if="{{keylist!=null}}" wx:for="{{keylist[0]}}" wx:key="index">
+<!-- 已使用key -->
+  <van-cell-group wx:if="{{item.flag==1}}">
+    <van-field
+      value="已使用"
+      center
+      label="{{item.key}}"
+      readonly="true"
+      border="{{ false }}"
+      use-button-slot
+    >
+      <van-button slot="button" size="small" type="primary" bindtap="copy" data-character="{{item.key}}">
+        复制
+      </van-button>
+    </van-field>
+  </van-cell-group>
+
+
+  <!-- 未使用key -->
+  <van-cell-group wx:if="{{item.flag==0}}">
+    <van-count-down use-slot time="{{ item.time }}" bind:change="onChange" data-n="{{index}}">
+    </van-count-down>
+    <van-field
+      value="{{timeer[index].hours}}时{{timeer[index].minutes}}分{{timeer[index].seconds}}秒 后过期"
+      center
+      label="{{item.key}}"
+      readonly="true"
+      border="{{ false }}"
+      use-button-slot
+    >
+      <van-button slot="button" size="small" type="primary" bindtap="copy" data-character="{{item.key}}">
+        复制
+      </van-button>
+    </van-field>
+  </van-cell-group>
+</view>
+
+
+
+

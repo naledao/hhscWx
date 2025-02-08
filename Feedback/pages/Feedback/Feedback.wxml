@@ -1,0 +1,19 @@
+<view class="one">问题或意见</view>
+<view class="two">
+  <van-cell-group>
+    <van-field
+      value="{{ message }}"
+      type="textarea"
+      placeholder="上限200字"
+      autosize
+      maxlength="{{200}}"
+      clearable
+      border="{{ false }}"
+      bind:change="changemsg"
+    />
+  </van-cell-group>
+</view>
+<view class="three">
+  <van-button type="primary" block bindtap="postfeedback">提交</van-button>
+</view>
+

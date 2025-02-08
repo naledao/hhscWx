@@ -1,0 +1,53 @@
+<!-- S级商品 -->
+<van-card wx:if="{{sgoods!=null}}" wx:for="{{sgoods}}" wx:key="{{index}}" bindtap="tosgood" data-index="{{index}}"
+  price="{{sgoods[index][index].price}}"
+  desc="{{sgoods[index][index].description}}"
+  title="{{sgoods[index][index].name}}"
+  tag="{{sgoods[index][index].area}}"
+  num="{{sgoods[index][index].business}}"
+  thumb="{{sgoods[index][index].pic}}">
+  <view slot="tags">
+    <text class="s1">求购价: {{sgoods[index][index].purchase_price+1}}</text>
+  </view>
+</van-card>
+
+<!-- A级商品 -->
+<van-card  wx:if="{{agoods!=null}}" wx:for="{{agoods}}" wx:key="{{index}}" bindtap="toagood" data-index="{{index}}"
+  price="{{agoods[index][index].price}}"
+  desc="{{agoods[index][index].description}}"
+  title="{{agoods[index][index].name}}"
+  tag="{{agoods[index][index].area}}"
+  num="{{agoods[index][index].business}}"
+  thumb="{{agoods[index][index].pic}}">
+  <view slot="tags">
+    <text class="s1">求购价: {{agoods[index][index].purchase_price+1}}</text>
+  </view>
+</van-card>
+
+
+<!-- B级商品 -->
+<van-card  wx:if="{{bgoods!=null}}" wx:for="{{bgoods[0]}}" wx:key="{{index}}" bindtap="tobgood" data-index="{{index}}"
+  price="{{item.price}}"
+  desc="{{item.description}}"
+  title="{{item.name}}"
+  tag="{{item.area}}"
+  num="{{item.business}}"
+  thumb="{{item.pic}}">
+  <view slot="tags">
+    <text class="s1">求购价: {{item.purchase_price+1}}</text>
+  </view>
+</van-card>
+
+
+<!-- C级商品 -->
+<van-card  wx:if="{{cgoods!=null}}" wx:for="{{cgoods[0]}}" wx:key="{{index}}" bindtap="tocgood" data-index="{{index}}"
+  price="{{item.price}}"
+  desc="{{item.description}}"
+  title="{{item.name}}"
+  tag="{{item.area}}"
+  num="{{item.business}}"
+  thumb="{{item.pic}}">
+  <view slot="tags">
+    <text class="s1">求购价: {{item.purchase_price+1}}</text>
+  </view>
+</van-card>

@@ -1,0 +1,98 @@
+<!-- 商品的封面 -->
+<view class="pic1">
+  <view>商品封面</view>
+</view>
+<view class="pic">
+  <van-uploader file-list="{{ piclist }}" disabled="{{true}}"                      catch:delete="deletepic" bindtap="getpicurl"  />
+</view>
+
+<!-- 商品的图片 -->
+<view class="pic1">
+  <view>商品图片</view>
+</view>
+<view class="pic">
+  <van-uploader file-list="{{ imagelist }}" disabled="{{true}}"    catch:delete="deleteimage" bindtap="getimageurl" />
+</view>
+
+
+<!-- 商品名称 -->
+<view class="pic1">
+  <view>商品名称</view>
+</view>
+<view class="pic">
+  <van-field
+    value="{{ goodname }}"
+    placeholder="请输入商品名称(上限16字):"
+    border="{{ false }}"
+    bind:change="onChangegoodname"
+    clearable="{{true}}"
+    maxlength="{{16}}"
+    clearable="{{true}}"
+  />
+</view>
+
+
+<!-- 商品描述 -->
+<view class="pic1">
+  <view>商品描述</view>
+</view>
+<view class="pic">
+  <van-field
+    value="{{ gooddecription }}"
+    placeholder="请输入商品描述(上限200字):"
+    border="{{ false }}"
+    bind:change="onChangegooddecription"
+    clearable="{{true}}"
+    maxlength="{{200}}"
+    type="textarea"
+    autosize
+  />
+</view>
+
+
+<!-- 商品价格 -->
+<view class="pic1">
+  <view>商品价格</view>
+</view>
+<view class="pic">
+  <van-cell-group>
+    <van-field
+      value="{{ goodprice }}"
+      placeholder="请输入商品价格(人民币):"
+      border="{{ false }}"
+      bind:change="onChangegoodprice"
+      clearable="{{true}}"
+      type="number"
+      autosize>
+      <van-button slot="button" size="small">人民币</van-button>
+    </van-field>
+  </van-cell-group>
+</view>
+
+
+<!-- 商品校区 -->
+<view class="pic1">
+  <view>商品校区</view>
+</view>
+<view class="pic">
+  <van-dropdown-menu>
+    <van-dropdown-item value="{{ goodarea }}" options="{{ areaoption }}" bind:change="onChangegoodarea" />
+  </van-dropdown-menu>
+</view>
+
+
+<!-- 商品状态 -->
+<view class="pic1">
+  <view>商品是否可被求购</view>
+</view>
+<view class="pic">
+  <van-cell-group>
+    <van-cell title="{{goodstatus}}">
+      <van-switch checked="{{ goodstatuschecked }}" bind:change="onChangegoodstatus" />
+    </van-cell>
+  </van-cell-group>
+</view>
+
+
+<!-- 开始上传 -->
+<button bindtap="releasegood" disabled="{{btnable}}">{{dao}}</button>

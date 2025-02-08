@@ -1,0 +1,22 @@
+<van-swipe-cell right-width="{{ 65 }}" left-width="{{ 65 }}" wx:for="{{likelist}}" wx:key="{{index}}" async-close  bind:close="OnDelete" data-index="{{index}}">
+  <view slot="left" class="van-swipe-cell__left">删除</view>
+    <van-card  bindtap="togoods" data-index="{{index}}"
+      num="{{item.business}}"
+      price="{{item.price}}"
+      desc="{{item.description}}"
+      title="{{item.name}}"
+      thumb="{{ item.pic }}"
+      tag="{{item.area}}"
+      >
+        <view slot="tags">
+          <text class="s1">求购价: {{item.purchase_price+1}}</text>
+        </view>
+      </van-card>
+  <view slot="right" class="van-swipe-cell__right">删除</view>
+</van-swipe-cell>
+
+
+
+<!-- dialog -->
+<van-dialog id="van-dialog" />
+
